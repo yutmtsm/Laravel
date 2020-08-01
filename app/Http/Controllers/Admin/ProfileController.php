@@ -27,13 +27,18 @@ class ProfileController extends Controller
         $profile->fill($form);
         //dd($profile);
         $profile->save();
+        dd($profile);
         //新規追加後一覧に移動
         return redirect('admin/news');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+        $profile = Profile::find($request->id);
+        if(empty($profile)){
+            abort(404);
+        }
+        return view('admin.profile.edit', ['profile_form' => $profile]);
     }
 
     public function update()

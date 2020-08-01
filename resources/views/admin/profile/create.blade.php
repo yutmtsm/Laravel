@@ -38,12 +38,16 @@
             <!--趣味-->
             <div class="form-group">
                 <label class="control-label">趣味(hobby)</label>
-                <textarea class="form-control btn-info" name="hobby" value="{{ old('hobby') }}" style="height: 100px;"></textarea>
+                <textarea class="form-control btn-info" name="hobby" value="{{ old('hobby') }}" style="height: 100px;">
+                    {{ old('hobby') }}
+                </textarea>
             </div>
             <!--自己紹介-->
             <div class="form-group">
                 <label class="control-label">自己紹介欄(introduction)</label>
-                <textarea class="form-control btn-info" name="introduction" value="{{ old('introduction') }}" style="height: 300px;"></textarea>
+                <textarea class="form-control btn-info" name="introduction" value="{{ old('introduction') }}" style="height: 300px;">
+                    {{ old('introduction') }}
+                </textarea>
             </div>
             {{ csrf_field() }}
             <input type="submit" class="btn btn-primary p-30px" value="更新">
