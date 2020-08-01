@@ -7,10 +7,8 @@
             <div class="header-left">
                 <h2>登録者情報</h2>
             </div>
-            <div>
-                <div class="header-right">
-                    <a class="login" href="{{ action('Admin\NewsController@add') }}">新規追加</a>
-                </div>
+            <div class="header-right">
+                <a class="add" href="{{ action('Admin\NewsController@add') }}">新規追加</a>
             </div>
         </header>
         <hr color="#c0c0c0">

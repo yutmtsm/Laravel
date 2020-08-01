@@ -3,10 +3,12 @@ body {
 }
 
 header {
-  height: 65px;
+  width: 1000px;
+  height: 60px;
   position: fixed;
   top: 0;
   z-index: 0;
+  margin-bottom: 20px;
 }
 
 .header-left {
@@ -23,15 +25,11 @@ header {
 }
 
 .header-right a {
-  line-height: 65px;
+  line-height: 50px;
   display: block;
   cursor: pointer;
 }
 
-.header .logo {
-  width: 120px;
-  height: 82px;
-}
 
 .headline .caption {
   position: relative;
