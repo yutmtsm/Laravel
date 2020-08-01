@@ -3,6 +3,14 @@
 
 @section('content')
     <div class="container">
+        <header>
+            <div class="header-left">
+                <h2>登録者情報</h2>
+            </div>
+            <div>
+                
+            </div>
+        </header>
         <div class="row">
             <h2>ニュース一覧</h2>
         </div>
