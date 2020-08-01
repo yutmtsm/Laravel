@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\News;
+use App\History;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -25,6 +27,7 @@ class NewsController extends Controller
         $news = new News;
         //配列で全て格納　dd($form);で確認
         $form = $request->all();
+        //dd($form);
         if(isset($form['image'])){
             //画像をStrange内に格納し、パスを代入
             $path = $request->file('image')->store('public/image');
@@ -79,21 +82,35 @@ class NewsController extends Controller
         $news_form = $request->all();
         
         //画像が再設定されていた時の処理
-        if(isset($news_form['image'])){
+        // if(isset($news_form['image'])){
+        //     $path = $request->file('image')->store('public/image');
+        //     $news->image_path = basename($path);
+        //     //name='remove'を受け取っている。つまり、削除ボタンが押されたこと場合の処理
+        // } elseif(isset($request->remove)) {
+        //     $news->image_path = null;
+        // }
+        // unset($news_form['_token']);
+        // unset($news_form['remove']);
+        // unset($news_form['image']);
+        if ($request->remove == 'true') {
+            $news_form['image_path'] = null;
+        } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
-            $news->image_path = basename($path);
-            //今回はif文の中で消す⇨画像データが変更なしのパターンがある為
-            unset($news_form['image']);
-            //name='remove'を受け取っている。つまり、削除ボタンが押されたこと場合の処理
-        } elseif(isset($request->remove)) {
-            $news->image_path = null;
-            //ここの処理を通す為だけに使われた、「remove」を削除
-            unset($news_form['remove']);
+            $news_form['image_path'] = basename($path);
+        } else {
+            $news_form['image_path'] = $news->image_path;
         }
-        
+
         unset($news_form['_token']);
+        unset($news_form['image']);
+        unset($news_form['remove']);
         
         $news->fill($news_form)->save();
+        
+        $history = new History;
+        $history->news_id = $news->id;
+        $history->edited_at = Carbon::now('Asia/Tokyo');
+        $history->save();
         
         return redirect('admin/news');
     }

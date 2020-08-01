@@ -15,4 +15,8 @@ class Profile extends Model
         'hobby' => 'required | max:192',
         'introduction' => 'required | max:576',
     );
+    //関連付けを行う。
+    public function changelogs(){
+        return $this->hasMany('App\Changelog');
+    }
 }
