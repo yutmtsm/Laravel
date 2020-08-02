@@ -25,13 +25,13 @@
                         <label class="control-label" style="width: 100%">性別(gender)</label>
                         <div class="btn-group" data-toggle="buttons" style="width: 100%">
                             <label class="btn btn-primary">
-                                <input type="radio" autocomplete="off" checked name="gender" value="{{ $profile_form->gender }}">　男性
+                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}">　男性
                             </label>
                             <label class="btn btn-danger">
-                                <input type="radio" autocomplete="off" checked name="gender" value="{{ $profile_form->gender }}">　女性
+                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}">　女性
                             </label>
                             <label class="btn btn-success">
-                                <input type="radio" autocomplete="off" checked name="gender" value="{{ $profile_form->gender }}">　その他
+                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}">　その他
                             </label>
                         </div>
                     </div>
