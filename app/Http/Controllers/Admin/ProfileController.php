@@ -60,6 +60,7 @@ class ProfileController extends Controller
     {
         $this->validate($request, Profile::$rules);
         $profile = Profile::find($request->id);
+        //dd($profile);
         $profile_form = $request->all();
         unset($profile_form['_token']);
         
