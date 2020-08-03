@@ -26,13 +26,13 @@
                         <div class="btn-group" data-toggle="buttons" style="width: 100%">
                             
                             <label class="btn btn-primary">
-                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}" @if (old('gender', $profile_form->gender) === '男性') checked @endif>　男性
+                                <input type="radio" autocomplete="off"  name="gender" value="男性" @if (old('gender', $profile_form->gender) === '男性') checked @endif>　男性
                             </label>
                             <label class="btn btn-danger">
-                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}" @if (old('gender', $profile_form->gender) === '女性') checked @endif>　女性
+                                <input type="radio" autocomplete="off"  name="gender" value="女性" @if (old('gender', $profile_form->gender) === '女性') checked @endif>　女性
                             </label>
                             <label class="btn btn-success">
-                                <input type="radio" autocomplete="off"  name="gender" value="{{ $profile_form->gender }}" @if (old('gender', $profile_form->gender) === 'その他') checked @endif>　その他
+                                <input type="radio" autocomplete="off"  name="gender" value="その他" @if (old('gender', $profile_form->gender) === 'その他') checked @endif>　その他
                             </label>
                         </div>
                     </div>
