@@ -8,7 +8,7 @@
                 <h2>登録者情報</h2>
             </div>
             <div class="header-right">
-                <a class="add" href="{{ action('Admin\NewsController@add') }}">新規追加</a>
+                <a class="add" href="{{ action('Admin\ProfileController@add') }}">新規追加</a>
             </div>
         </header>
         <hr color="#c0c0c0">

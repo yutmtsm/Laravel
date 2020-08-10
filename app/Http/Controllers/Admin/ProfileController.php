@@ -31,7 +31,7 @@ class ProfileController extends Controller
         $profile->save();
         //dd($profile);
         //新規追加後一覧に移動
-        return redirect('admin/news');
+        return redirect('admin/profile');
     }
 
     public function edit(Request $request)
